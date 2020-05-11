@@ -1,0 +1,20 @@
+int Solution::isPalindrome(int A) {
+    int n=A;
+    if(n<0) return 0;
+    int x=n,s=0;
+    while(x){
+        s++;
+        x/=10;
+    }
+    int j=s-1;
+    while(n){
+        int y=n/(pow(10,j));
+        if(y!=(n%10))
+         return 0;
+        n=n-y*pow(10,j);
+        n=n/10;
+        j-=2;
+    }
+    return 1;
+}
+
